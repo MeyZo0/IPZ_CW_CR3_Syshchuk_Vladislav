@@ -5,8 +5,12 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyListState
@@ -41,10 +45,24 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun MainWindow() {
-    
-    item1()
-    item2()
-    item3()
+    Column {
+        Text(
+            text = "30 Days of Wellenss",
+            fontSize = 30.sp,
+        )
+        LazyColumn(
+            contentPadding = PaddingValues(10.dp),
+            content = {
+                item {
+                    item1()
+                    Spacer(modifier = Modifier.height(20.dp))
+                    item2()
+                    Spacer(modifier = Modifier.height(20.dp))
+                    item3()
+                }
+            }
+        )
+    }
 }
 
 @Composable
@@ -52,19 +70,21 @@ fun item1 () {
     Column {
 
         Text(
-            text = "30 Days of Wellenss",
-            fontSize = 30.sp,
+            text = "day 1",
+            fontSize = 20.sp
+            )
+        Text(
+            text = "Spend 15 minutes outdoors",
+            fontSize = 20.sp
         )
-        Text(text = "day 1")
-        Text(text = "Spend 15 minutes outdoors" )
 
         Image(painter = painterResource(R.drawable.flowers1),
             contentDescription = null,
             modifier = Modifier
-                .size(500.dp)
+                .fillMaxSize()
         )
         Text(
-            text = "pudge "
+            text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. "
         )
     }
     
@@ -75,19 +95,21 @@ fun item2 () {
     Column {
 
         Text(
-            text = "30 Days of Wellenss",
-            fontSize = 30.sp,
+            text = "day 2",
+            fontSize = 20.sp
         )
-        Text(text = "day 1")
-        Text(text = "Spend 15 minutes outdoors" )
+        Text(
+            text = "Listen to a new podcast or audibook",
+            fontSize = 20.sp
+        )
 
         Image(painter = painterResource(R.drawable.flowers2),
             contentDescription = null,
             modifier = Modifier
-                .size(500.dp)
+                .fillMaxWidth()
         )
         Text(
-            text = "pudge "
+            text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
         )
     }
 
@@ -98,19 +120,21 @@ fun item3 () {
     Column {
 
         Text(
-            text = "30 Days of Wellenss",
-            fontSize = 30.sp,
+            text = "day 3",
+            fontSize = 20.sp
         )
-        Text(text = "day 1")
-        Text(text = "Spend 15 minutes outdoors" )
+        Text(
+            text = "Mediatate fo at least 3 minutes",
+            fontSize = 20.sp
+        )
 
         Image(painter = painterResource(R.drawable.flowers1),
             contentDescription = null,
             modifier = Modifier
-                .size(500.dp)
+                .fillMaxWidth()
         )
         Text(
-            text = "pudge "
+            text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
         )
     }
 
